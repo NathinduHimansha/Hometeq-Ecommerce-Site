@@ -4,7 +4,7 @@ $pagename="Make your home smart"; //create and populate variable called $pagenam
 
 echo "<link rel=stylesheet type=text/css href=mystylesheet.css>";
 echo "<title>".$pagename."</title>";
-echo "<body>";
+echo "<body class='body'>";
 include ("headfile.html");
 echo "<h4>".$pagename."</h4>";
 
