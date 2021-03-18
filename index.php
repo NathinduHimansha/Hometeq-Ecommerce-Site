@@ -19,7 +19,7 @@ echo "<table style='border: 0px'>";
 
 while ($arrayp=mysqli_fetch_array($exeSQL))
 {
-    print_r($arrayp);
+
 echo "<tr>";
 echo "<td rowspan='3' style='border: 0px'>";
 
