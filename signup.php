@@ -6,53 +6,37 @@ echo "<body>";
 include ("headfile.html"); //include header layout file
 echo "<h4>".$pagename."</h4>"; //display name of the page on the web page
 
-echo "<form class='signupform'  action='login_process.php'>
-    <table>
-        <tr >
-            <td><label  for='fname'>First name:</label> </td>
-            <td> <input  type='text' id='fname' value=''><br> </td>
-        </tr>
 
-        <tr >
-            <td><label for='lname'>Lat name:</label> </td>
-            <td> <input type='text' id='lname' value=''><br> </td>
-        </tr>
+echo "<div class='formStyle'>
+    <form action='signup_process.php' method='post'>
+        <label  for='fname'>First name:</label> 
+        <input class='element'  type='text' name='fname' value=''><br>
 
-        <tr >
-            <td><label for='address'>Address:</label></td>
-            <td> <input type='text' id='address' value=''><br> </td>
-        </tr>
+        <td><label for='lname'>Lat name:</label> </td>
+        <td> <input class='element' type='text' name='lname' value=''><br>
+        
+        <label for='address'>Address:</label>
+        <input class='element' type='text' name='address' value=''><br>
 
-        <tr >
-            <td> <label for='tel'>Tel No:</label> </td>
-            <td> <input type='text' id='tel' value=''><br> </td>
-        </tr>
+        <label for='postalcode'>Postal Code:</label>
+        <input class='element' type='text' name='postalcode' value=''><br>
+         
+        <label for='tel'>Tel No:</label> 
+        <input class='element' type='text' name='tel' value=''><br>
+       
+        <label for='email'>Email address:</label> </td>
+        <input class='element' type='text' name='email' value=''><br>
+     
+        <label for='password'>Password:</label>
+        <input class='element' type='text' name='password' value=''><br>
 
-        <tr >
-            <td><label for='email'>Email address:</label> </td>
-            <td> <input type='text' id='email' value=''><br></td>
-        </tr>
-
-        <tr >
-            <td><label for='password'>Password:</label></td>
-            <td> <input type='text' id='password' value=''><br></td>
-        </tr>
-
-        <tr >
-            <td><label for='conpassword'>Confirm Password:</label> </td>
-            <td> <input type='text' id='conpassword' value=''><br> </td>
-        </tr>
-
-        <tr >
-            <td><input class='btn' type='submit' value='SignUp'></td>
-            <td> <input class='btn' type='reset' value='Clear'><br> </td>
-        </tr>
-    </table>
-</form>";
-
-
-
-
+        <label for='conpassword'>Confirm Password:</label> </td>
+        <input class='element' type='text' name='conpassword' value=''><br>
+       
+        <input class='btn' type='submit' value='SignUp'>
+        <input class='btn' type='reset' value='Clear'><br> 
+    </form>
+</div>";
 
 
 
