@@ -6,7 +6,8 @@ $pagename="Smart Basket"; //Create and populate a variable called $pagename
 echo "<link rel=stylesheet type=text/css href=mystylesheet.css>"; //Call in stylesheet
 echo "<title>".$pagename."</title>"; //display name of the page as window title
 echo "<body>";
-include ("headfile.html"); //include header layout file
+include ("headfile.php"); //include header layout file
+include ("detectlogin.php");
 echo "<h4>".$pagename."</h4>"; //display name of the page on the web page
 
 if(isset($_POST["del_prodid"])){
@@ -96,9 +97,23 @@ echo "</table>";
 
 
 
-echo "<br> <a href='clearbasket.php'> CLEAR BASKET </a> <br><br>
-    New hometeq Customers: <a href='signup.php'>Sign Up</a><br><br>
-     Returning hometeq Customers: <a href=' login.php '> Log In</a>";
+echo "<br> <a href='clearbasket.php'> CLEAR BASKET </a> <br><br>";
+    
+
+//if the session user id $_SESSION['userid'] is set (i.e. if the user has logged in successfully)
+if(isset($_SESSION['userid']) and isset($_SESSION['usertype']))
+{
+    //display a Checkout anchor to link to checkout.php
+    echo "to finalise your order: <a href='checkout.php'>Checkout</a>";
+}
+
+else
+{
+    //display a Signup anchor for new customers to link to signup.php
+    //display a Login anchor for returning customers to link to login.php
+    echo "New hometeq Customers: <a href='signup.php'>Sign Up</a><br><br>
+    Returning hometeq Customers: <a href=' login.php '> Log In</a>";
+}
 
 
 include("footfile.html"); //include head layout
