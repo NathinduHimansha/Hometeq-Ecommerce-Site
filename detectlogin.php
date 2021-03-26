@@ -22,9 +22,9 @@
             session_start();
 
             //if the session user id $_SESSION['userid'] is set (i.e. if the user has logged in successfully)
-            if(isset($_SESSION['userid']) and isset($_SESSION['usertype']))
+            if(isset($_SESSION['userId']) and isset($_SESSION['usertype']))
             {
-                $user = $_SESSION['userid'];
+                $user = $_SESSION['userName'];
                 $userType = $_SESSION['usertype'];
 
                 //display first name and surname on the right hand-side, right under the navigation bar

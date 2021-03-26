@@ -9,8 +9,8 @@ include ("headfile.php"); //include header layout file
 include ("detectlogin.php");
 echo "<h4>".$pagename."</h4>"; //display name of the page on the web page
 
-unset($_SESSION['basket']);
-echo "Your basket has been cleared” message";
+
+echo "Your basket has been cleared";
 
 include("footfile.html"); //include head layout
 echo "</body>";

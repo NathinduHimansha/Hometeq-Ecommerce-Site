@@ -98,21 +98,24 @@ echo "</table>";
 
 
 echo "<br> <a href='clearbasket.php'> CLEAR BASKET </a> <br><br>";
-    
+
 
 //if the session user id $_SESSION['userid'] is set (i.e. if the user has logged in successfully)
-if(isset($_SESSION['userid']) and isset($_SESSION['usertype']))
+if(isset($_SESSION['userId']) and isset($_SESSION['usertype']) and $total!=0 )
 {
     //display a Checkout anchor to link to checkout.php
     echo "to finalise your order: <a href='checkout.php'>Checkout</a>";
 }
 
-else
+elseif (!(isset($_SESSION['userId']) and isset($_SESSION['usertype']) ))
 {
     //display a Signup anchor for new customers to link to signup.php
     //display a Login anchor for returning customers to link to login.php
     echo "New hometeq Customers: <a href='signup.php'>Sign Up</a><br><br>
     Returning hometeq Customers: <a href=' login.php '> Log In</a>";
+}
+else{
+    echo "Continue shopping for <a href='index.php'>Home Tech </a><br>";
 }
 
 

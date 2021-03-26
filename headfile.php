@@ -16,7 +16,7 @@ echo "<div id='container'>
 <div id='navigation'>
 <ul> ";
   
-        if(!(isset($_SESSION['userid']) and isset($_SESSION['usertype'])))
+        if(!(isset($_SESSION['userId']) and isset($_SESSION['usertype'])))
         {
 
             echo "<div>

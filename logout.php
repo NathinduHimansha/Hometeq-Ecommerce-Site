@@ -11,10 +11,10 @@ echo "<h4>".$pagename."</h4>"; //display name of the page on the web page
 //display random text
 
 //Display thank you message
-$user = $_SESSION['userid'];
+$user = $_SESSION['userName'];
 
 
-echo "Thankyou .$user. <br>";
+echo "Thankyou $user <br>";
 //unset the session
 unset($_SESSION['userid']);
 unset($_SESSION['usertype']);

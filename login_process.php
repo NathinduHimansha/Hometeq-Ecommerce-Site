@@ -31,7 +31,7 @@ else
     //execute the SQL query & fetch results of the execution of the SQL query and store them in $arrayu
     //also capture the number of records retrieved by the SQL query using function mysqli_num_rows and store it
     //in a variable called $nbrecs
-    $SQL="select userEmail,userType,userPassword,userFName,userSName from Users where userEmail='$email'";
+    $SQL="select userId,userEmail,userType,userPassword,userFName,userSName from Users where userEmail='$email'";
     $exeSQL=mysqli_query($conn, $SQL) or die (mysqli_error($conn));
     $arrayu=mysqli_fetch_array($exeSQL);
     $nbrecs=mysqli_num_rows($exeSQL);
@@ -51,7 +51,7 @@ else
         if($arrayu['userPassword']!=$password)
         {
             //display error message "Password not recognised, login again"
-            echo "<b>Logn failed!</b><br><br>";
+            echo "<b>Login failed!</b><br><br>";
             echo "Incorrect password<br>";
             echo "Go back to <a href='login.php'>login</a>";  
         }
@@ -65,14 +65,15 @@ else
             
 
             echo "<strong>Login success!!</strong><br>";
-            echo "Welcome," .$arrayu['userFName']."<br>";
+            echo "Welcome, " .$arrayu['userFName']."<br>";
             echo "User type: " .$arrayu['userType']."<br><br>";
 
             echo "Continue shopping for <a href='index.php'>Home Tech </a><br>";
             echo "View your <a href='basket.php'>Smart Basket</a>";
 
-            $_SESSION['userid']=$arrayu['userFName'].$arrayu['userSName']; 
-            $_SESSION['usertype']=$arrayu['userType'];       
+            $_SESSION['userName']=$arrayu['userFName'].$arrayu['userSName']; 
+            $_SESSION['userId']=$arrayu['userId'];
+            $_SESSION['usertype']=$arrayu['userType'];            
         }
     }
 }
